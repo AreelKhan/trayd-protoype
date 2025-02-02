@@ -1,6 +1,6 @@
 # Job Management API
 
-Hey Cara! Here's my attempt at building API for the job management system.
+Hey Cara! Here's my attempt at building an API for the job management system.
 # Setup
 
 1. Prerequisites:
