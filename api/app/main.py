@@ -208,10 +208,8 @@ def assign_worker_to_job(worker_id: int, job_id: int):
 @app.get("/analytics/", response_model=JobAnalytics)
 def get_analytics():
     with get_db() as db:
-        # Get total jobs
         total_jobs = db.query(func.count(Job.id)).scalar()
 
-        # Get jobs by status
         status_counts = db.query(
             Job.status,
             func.count(Job.id)
@@ -221,10 +219,8 @@ def get_analytics():
             for status, count in status_counts
         }
 
-        # Get total workers
         total_workers = db.query(func.count(Worker.id)).scalar()
 
-        # Get workers by role
         role_counts = db.query(
             Worker.role,
             func.count(Worker.id)
